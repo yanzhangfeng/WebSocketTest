@@ -10,9 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class WebSocket {
 	
 	@RequestMapping(path = "index")
-	public ModelAndView index(@RequestParam("nickname") String nickname,HttpSession session) {
+	public ModelAndView index(HttpSession session) {
 		System.out.println("httpSession's id = " + session.getId());
-		session.setAttribute("nickname", nickname);
 		return new ModelAndView("index");
 	}
 	
